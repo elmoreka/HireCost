@@ -1,8 +1,11 @@
 // Calculate the cost of hiring personal for the dates specified
 
 
-document.getElementById("submit").addEventListener("click", process_form);
+//document.getElementById("submit").addEventListener("click", process_form);
 
+$("#submit").bind( "click", function() { process_form() });
+var source = $("#printable").html();
+var template = Handlebars.compile(source);
 
 // This function calculates the number of weeks between the two dates
 
@@ -23,11 +26,6 @@ function monthsBetween(date1, date2)
     return Math.round(difference_ms/OneMonth);
 }
 
-$("#calculate").bind( "click", function() { process_form() });
-
-var source = $("#printable").html();
-var template = Handlebars.compile(source);
-
 function process_form() 
 {	
 	var empId = document.getElementById("empId").value;
@@ -44,6 +42,11 @@ function process_form()
 	
 	var supervisor = document.getElementById("supervisor").value;
 	var phone = document.getElementById("phone").value;
+
+	var data = {'empId':empId,
+				'fName':fName,
+				'lName':lName,
+	}
 
 	console.log(sDate);
 	console.log(cDate);
