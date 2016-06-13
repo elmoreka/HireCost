@@ -6,114 +6,182 @@
 		<title>Employee Cost</title>
 		<script src="js/jquery-2.2.4.min.js"></script>
 		<script src="js/handlebars-v4.0.5.js"></script>
+		<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 		<link href = "css/hireCost.css" rel = "stylesheet" type = "text/css">
+		<div id="header"><div id="header-inner"><div id="logo">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/logo.png" alt="CPCC Logo" /></div>
+		<div id="menu">
+			<ul id="site-navigation"><li id="portaltab-about" class="plain"><a href="http://www.cpcc.edu/about" title="">
+			About CPCC</a></li>
+			<li id="portaltab-learning" class="plain"><a href="http://www.cpcc.edu/academics" title="">Academics</a></li>
+			<li id="portaltab-studentservices" class="plain"><a href="http://www.cpcc.edu/services" title="">Student Services</a></li>
+			<li id="portaltab-artscommunity" class="plain"><a href="http://www.cpcc.edu/artscommunity" title="">Arts &amp; Community</a></li>
+			<li id="portaltab-careerhub" class="plain"><a href="http://www.cpcc.edu/careerhub" title="">Career Hub</a></li>
+			</ul>
+		</div><!-- end menu -->
 	</head>
 <body>
-	<h1>Employee Information<h1/>
+
 	<div id="text">
-	
+	<h1>Rate Schedule Calculator</h1>
+	<h4>Employee Information<h4/>
+
 	<fieldset>
 	
-	<p>
-	<label for="empId">Employee ID:</label>
-	<input type="text" id="empId" pattern="[0-9]{7}" required placeholder="Employee ID" />
-	</p>
-	
-	<p>
-	<label for="fName">First Name:</label>
-	<input type="text" id="fName" required placeholder="First Name" />
-	</p>
-	
-	<p>
-	<label for="lName">Last Name</label>
-	<input type="text" id="lName" required placeholder="Last Name" />
-	</p>
-	
-	<p>
-	<label for="posNum">Position Number</label>
-	<input type="text" id="posNum" required placeholder="Position Number" />
-	</p>
-	
-	<p>
-	<label for="posTitle">Position Title</label>
-	<input type="text" id="posTitle" required placeholder="Position Title" />
-	</p>
-	
-	<p>
-	<label for="empType">Employee Type</label>
-	</p>
-	<p>
-	<select id="empType" name="empType" value="">
+	<dl>
+	<dt><label for="empId">Employee ID:</label></dt>
+	<dd><input type="text" id="empId" pattern="[0-9]{7}" required placeholder="Employee ID" />
+	</dd>
+
+	<dt><label for="fName">First Name:</label></dt>
+	<dd><input type="text" id="fName" required placeholder="First Name" /></dd>
+
+	<dt><label for="lName">Last Name</label></dt>
+	<dd><input type="text" id="lName" required placeholder="Last Name" /></dd>
+
+	<dt><label for="posNum">Position Number</label></dt>
+	<dd><input type="text" id="posNum" required placeholder="Position Number" /></dd>
+
+	<dt><label for="posTitle">Position Title</label></dt>
+	<dd><input type="text" id="posTitle" required placeholder="Position Title" /></dd>
+
+	<dt><label for="empType">Employee Type</label></dt>
+	<dd><select id="empType" name="empType" value="">
 		<option value="" selected>Select Employee Type:</option>
-			<option value="1">Hourly Pay Rate (Non Exempt Employees)</option>
-			<option value="1">Contact Hour Pay Rate (Exempt Instructors)</option>	
-	</select>
-	</p>
-	
-	<p>
-	<label for="sDate">Start date</label>
-	<input type="date" id="sDate" required placeholder="Start date" />
-	</p>
+			<option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)</option>
+			<option value=">Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt Instructors)</option>
+	</select></dd>
 
-	<p>
-	<label for="cDate">End date</label>
-	<input type="date" id="cDate" required placeholder="End date" />
-	</p>
-	
+	<dt><label for="sDate">Start date</label></dt>
+	<dd><input type="date" id="sDate" required placeholder="Start date" /></dd>
+	<!--<script type="text/javascript">
+		onchange="set_end_date_per_start_date('change');"
+		$('#sDate').val(Date());
+	</script>-->
+	<dt><label for="cDate">End date</label></dt>
+	<dd><input type="date" id="cDate" required placeholder="End date" /></dd>
+	</dl>
 	</fieldset>
 	
 	<fieldset>
-	<h1>Budgeting Worksheet</h1>
-	
-	<p>
-	<label for="glAcct">GL Account:</label>
-	<input type="text" id="glAcct" required placeholder="GL Account" />
-	</p>
-	
-	<p>
-	<label for="rate">Hourly rate:</label>
-	<input type="number" id="rate" required placeholder="Hourly rate" />
-	</p>
-	
-	<p>
-	<label for="hours">Estimated Monthly Hours:</label>
-	<input type="number" id="hours" required placeholder="Monthly Hours" />
-	</p>
+	<h4>Budgeting Worksheet</h4>
+	<dl>
+	<dt><label for="glAcct">GL Account:</label></dt>
+	<dd><input type="text" id="glAcct" required placeholder="GL Account" /></dd>
 
-	<p>
-	<label for="compensation">Estimated Encumbrance for Current Fiscal Year:</label>
-	<input type="number" id="compensation"  />
-	</p>
-	
+	<dt><label for="rate">Hourly rate:</label></dt>
+	<dd><input type="number" id="rate" required placeholder="Hourly rate" /></dd>
+
+	<dt><label for="hours">Estimated Monthly Hours:</label></dt>
+	<dd><input type="number" id="hours" required placeholder="Monthly Hours" /></dd>
+
+	<dd><input type="hidden" id="comp"  /></dd>
+	</dl>
 	</fieldset>
 	
 	<fieldset>
-	<h1>Supervisor Information</h1>
-	<label for="supervisor">Supervisor Name:</label>
-	<input type="text" id="supervisor" required placeholder="Supervisor Name" />
-	</p>
-	
-	<p>
-	<label for="phone">Phone Extension:</label>
-	<input type="text" id="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" />
-	</p>
-	
+	<h4>Supervisor Information</h4>
+	<dl>
+	<dt><label for="supervisor">Supervisor Name:</label></dt>
+	<dd><input type="text" id="supervisor" required placeholder="Supervisor Name" /></dd>
+
+	<dt><label for="phone">Phone Extension:</label></dt>
+	<dd><input type="text" id="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" /></dd>
+	</dl>
 	</fieldset>
 	
 	<p>
 	<button class="button" id="submit">Calculate</button>
 	<button class="button" id="reset">Reset</button>
 	</p>
-	
-	</div><!-- End of contact-form -->
+		<div class="clear"></div>
+		<div id="footer"><ul id="footer-navigation"><li>
+			<a href="http://www.cpcc.edu/humanresources/employment">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/briefcase_icon.png" alt="Jobs at CPCC" />
+			</a><br /><a href="http://www.cpcc.edu/humanresources/employment">Jobs at CPCC</a></li>
+			<li><a href="http://www.cpcc.edu/attending/catalog">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/catalog_icon.png" alt="College Catalog" />
+			</a><br /><a href="http://www.cpcc.edu/attending/catalog">College Catalog</a></li><li>
+			<a href="http://www.cpcc.edu/college-safety">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/icon_college_safety.png" alt="College Safety" />
+			</a><br /><a href="http://www.cpcc.edu/college-safety">Safety</a></li><li><a href="http://www.cpcc.edu/site-map">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/sitemap_icon.png" alt="Site Map" /></a><br />
+			<a href="http://www.cpcc.edu/site-map">Site Map</a></li>
+			<li><a href="http://inside.cpcc.edu/">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/employee_icon.png" alt="Employee Intranet" /></a>
+			<br /><a href="http://inside.cpcc.edu/">Employee Intranet</a></li>
+			<li><a href="http://www.cpcc.edu/services/online-services">
+			<img id="tester" src="http://www.cpcc.edu/++resource++theme.www.images/globe_icon.png" alt="Online Services" />
+			</a><br /><a href="http://www.cpcc.edu/services/online-services">Online Services</a></li><li class="last">
+			<a href="http://www.cpcc.edu/contact-us">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/contact_icon.png" alt="Contact Us" /></a>
+			<br /><a href="http://www.cpcc.edu/contact-us">Contact Us</a></li></ul><div class="clear"></div>
+			<div id="footer-links">
+			<a href="http://www.cpcc.edu/browsers/supported-browsers">Supported Browsers</a> /
+			<a href="http://www.cpcc.edu/services/accessibility">Accessibility</a><br />Central Piedmont Community College
+			</div>
+		</div><!-- end footer -->
+	</div><!-- End of Rate Scheduler form -->
 	
 	<div id="printable">
-	<p>Employee ID: {{empId}}</p>
-	<p>First Name: {{fName}}</p>
-	<p>Last Name: {{lName}}</p>
-	
+		<p>
+		<div id="header">
+			<div id="logo">
+				<img src="img/logo.png"/>
+			</div>
+		</div>
+		</p>
+		<p><td class="uline"><h4>Rate Schedule</h4></td></p>
+		<p>
+		<b>Note:</b> Non-Exempt employees will submit and be paid from timesheets.
+		Instructors will submit and be paid from contact hour reports.
+		</p>
+		<td class="uline"><h4> Employee Information</h4></td>
+
+		<p>Employee ID:</p>
+		<div class="data">
+			<p>{{empId}}</p>
+			<p>First name:</p>
+			<p>{{fName}}</p>
+			<p>Last name:</p>
+			<p>{{lName}}</p>
+			<p>Position number:</p>
+			<p>{{posNum}}</p>
+			<p>Position title:</p>
+			<p>{{posTitle}}</p>
+			<p>Employee Type:</p>
+			<p>{{empType}}</p>
+			<p>Start date:</p>
+			<p>{{sDate}}</p>
+			<p>End date:</p>
+			<p>{{cDate}}</p>
+		</div>
+		<td class="uline"><h4>Budgeting Worksheet</h4></td>
+
+		<div class="data">
+			<p>GL Account:</p>
+			<p>{{glAcct}}</p>
+			<p>Hourly rate:</p>
+			<p>{{rate}}</p>
+			<p>Estimated Monthly Hours:</p>
+			<p>{{hours}}</p>
+			<p><td class="uline"><h4>Calculated Values</h4></td></p>
+			<p>Estimated Encumbrance for Current Fiscal Year:</p>
+			<p>{{comp}}</p>
+		</div>
+
+		<div class="data">
+			<p><td class="uline"><h4>Authorization:</h4></td></p>
+			<p></p>
+			<p>---------------------------------------------------------------------------------------------</p>
+			<p>{{supervisor}} Phone Extension: {{phone}} Date </p>
+			<p></p>
+		</div>
+
 	</div>
 	<script src="calculateHireCost.js">
 	</script>
 </body>
 </html>
+
