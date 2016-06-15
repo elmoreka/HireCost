@@ -222,3 +222,73 @@ a:focus img {
     text-align: center;
     font-size: 12px;
 }
+
+/* Definition lists */
+dl dt, dl dd { margin: 5px 0; }
+dl dd { margin-bottom: 20px; }
+dl dt { font-weight: bold; }
+
+/* Forms */
+fieldset { border: 1px solid #aaa; margin: 10px 0; padding: 10px; }
+legend { padding: 0 5px; font-size: 13px; font-weight: bold; color: #333; }
+div.field { margin: 10px 0; }
+div.field span.required { color: #ff0000; }
+div.field.radio, div.field.checkbox { margin: 10px 0; }
+div.field label { display: block; margin: 5px 0; font-weight: bold; }
+div.field.inline label { display: inline; margin: 5px 15px 0 0; font-weight: bold; }
+div.field.radio label, div.field.checkbox label
+{
+    display: inline;
+    margin-left: 5px;
+}
+div.field div.help-text
+{
+    margin-top: 3px;
+    font-style: italic;
+    font-size: 11px;
+    color: #888;
+}
+input[type=text], input[type=password], textarea
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    background: #f3f8f9;
+}
+input[type=text].focus, input[type=password], textarea.focus
+{
+    border-color: #aaa;
+    background: #e6eff1;
+}
+div.field.invalid
+{
+    padding: 10px 15px;
+    border: 1px solid #851515;
+    background: #ffd7d7;
+}
+/* Tables */
+table { margin: 15px 0; width: 100%; border-collapse: collapse; }
+table th, td { padding: 7px 10px; }
+table th
+{
+    background: #e9f3de;
+    border: 1px solid #aaa;
+    text-align: left;
+    text-shadow: 1px 1px #fff;
+    color: #333;
+}
+table td { border: 1px solid #aaa; }
+table tr.even td  { background: #fff; }
+table tr.odd td { background: #f5f5f5; }
+/* Alert messages */
+div.message
+{
+    margin-bottom: 15px;
+    padding: 10px 10px 10px 50px;
+    min-height: 30px;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    background-repeat: no-repeat;
+    background-position: 10px 10px;
+}
