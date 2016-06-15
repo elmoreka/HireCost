@@ -89,8 +89,29 @@ function calculate(sDate,cDate)
 {
 	// convert date string to date
 
-	var date1 = new Date(sDate);
-	var date2 = new Date(cDate);
+	var newdate1 = new Date(sDate);
+	var newdate2 = new Date(cDate);
+
+	newdate1.setDate(newdate1.getDate() + 2);
+	newdate2.setDate(newdate2.getDate() + 2);
+
+	var dd1 = newdate1.getDate();
+	var mm1 = newdate1.getMonth() + 1;
+	var y1 = newdate1.getFullYear();
+
+	var dd2 = newdate2.getDate();
+	var mm2 = newdate2.getMonth() + 1;
+	var y2 = newdate2.getFullYear();
+
+
+	var date1 = mm1 + '-' + dd1 + '-' + y1;
+	var date2 = mm2 + '-' + dd2 + '-' + y2;
+
+	var date1 = new Date(date1);
+	var date2 = new Date(date2);
+
+	date1 = formatDate(date1);
+	date2 = formatDate(date2);
 
 	var rate = document.getElementById("rate").value;
 	var hours = document.getElementById("hours").value;	
@@ -213,22 +234,7 @@ function set_end_date_per_start_date(mode) {
 
 	console.log(startDate.getMonth());
 	console.log(startDate.getDate());
-	if (startDate.getMonth() < 10 && startDate.getDate() < 10)
-	{
-		startDateString = startDate.getFullYear() + "-0" + (startDate.getMonth() + 1) + "-0" + startDate.getDate();
-	}
-	else if (startDate.getMonth() < 10 && startDate.getDate() > 9)
-	{
-		startDateString = startDate.getFullYear() + "-0" + (startDate.getMonth() + 1) + "-" + startDate.getDate();
-	}
-	else if (startDate.getMonth() > 9 && startDate.getDate() < 10)
-	{
-		startDateString = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-0" + startDate.getDate();
-	}
-	else
-	{
-		startDateString = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-" + startDate.getDate();
-	}
+	startDateString = formatDate2(startDate);
 
 	$("#sDate").val(startDateString);
 	console.log($("#sDate").val());
@@ -237,22 +243,8 @@ function set_end_date_per_start_date(mode) {
 	console.log(startDate.getDate());
 	console.log(endDate.getMonth());
 	console.log(endDate.getDate());
-	if (endDate.getMonth() < 10 && endDate.getDate() < 10)
-	{
-		endDateString = endDate.getFullYear() + "-0" + (endDate.getMonth() + 1) + "-0" + endDate.getDate();
-	}
-	else if (endDate.getMonth() < 10 && endDate.getDate() > 9)
-	{
-		endDateString = endDate.getFullYear() + "-0" + (endDate.getMonth() + 1) + "-" +endDate.getDate();
-	}
-	else if (endDate.getMonth() > 9 && endDate.getDate() < 10)
-	{
-		endDateString = endDate.getFullYear() + "-" + (endDate.getMonth() + 1) + "-0" + endDate.getDate();
-	}
-	else
-	{
-		endDateString = endDate.getFullYear() + "-" + (endDate.getMonth() + 1) + "-" + endDate.getDate();
-	}
+	endDateString = formatDate2(endDate);
+
 
 	$("#cDate").val(endDateString);
 	console.log($("#cDate").val());
@@ -276,4 +268,49 @@ function initialize_dates() {
 	// Seed with today's date.
 	//
 	set_end_date_per_start_date('initial');
+}
+
+function formatDate(date)
+{
+	if (date.getMonth() < 10 && date.getDate() < 10)
+	{
+		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-0" + date.getDate();
+	}
+	else if (date.getMonth() < 10 && date.getDate() > 9)
+	{
+		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-" +date.getDate();
+	}
+	else if (date.getMonth() > 9 && date.getDate() < 10)
+	{
+		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-0" + date.getDate();
+	}
+	else
+	{
+		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+	}
+
+	date = new Date(dateString);
+	return date;
+}
+
+function formatDate2(date)
+{
+	if (date.getMonth() < 10 && date.getDate() < 10)
+	{
+		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-0" + date.getDate();
+	}
+	else if (date.getMonth() < 10 && date.getDate() > 9)
+	{
+		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-" +date.getDate();
+	}
+	else if (date.getMonth() > 9 && date.getDate() < 10)
+	{
+		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-0" + date.getDate();
+	}
+	else
+	{
+		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+	}
+
+	return dateString;
 }

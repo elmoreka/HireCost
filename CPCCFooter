@@ -203,3 +203,22 @@ alt="Military Student Service" /></a><a href="http://cpccfoundation.com/ways-to-
 
         <dt><label for="id_start_date">Start Date:</label></dt>
                <dd><input type="text" id="id_start_date" name="start_date" size="8" value="" onchange="set_end_date_per_start_date('change');" /></dd>
+
+
+
+    if (startDate.getMonth() < 10 && startDate.getDate() < 10)
+	{
+		startDateString = startDate.getFullYear() + "-0" + (startDate.getMonth() + 1) + "-0" + startDate.getDate();
+	}
+	else if (startDate.getMonth() < 10 && startDate.getDate() > 9)
+	{
+		startDateString = startDate.getFullYear() + "-0" + (startDate.getMonth() + 1) + "-" + startDate.getDate();
+	}
+	else if (startDate.getMonth() > 9 && startDate.getDate() < 10)
+	{
+		startDateString = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-0" + startDate.getDate();
+	}
+	else
+	{
+		startDateString = startDate.getFullYear() + "-" + (startDate.getMonth() + 1) + "-" + startDate.getDate();
+	}

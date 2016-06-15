@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4cf2a381-32f1-4cbd-aa67-130d7f4d6228" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CPCCFooter" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/css/test.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/moment.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CPCCFooter" afterPath="$PROJECT_DIR$/CPCCFooter" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/calculateHireCost.js" afterPath="$PROJECT_DIR$/calculateHireCost.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/hireCost.css" afterPath="$PROJECT_DIR$/css/hireCost.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hireCost.html" afterPath="$PROJECT_DIR$/hireCost.html" />
@@ -30,8 +32,8 @@
       <file leaf-file-name="hireCost2.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hireCost2.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-152">
-              <caret line="166" column="97" selection-start-line="166" selection-start-column="90" selection-end-line="166" selection-end-column="97" />
+            <state relative-caret-position="205">
+              <caret line="165" column="86" selection-start-line="165" selection-start-column="8" selection-end-line="166" selection-end-column="105" />
               <folding />
             </state>
           </provider>
@@ -40,18 +42,40 @@
       <file leaf-file-name="hireCost.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/hireCost.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1564">
-              <caret line="92" column="12" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="12" />
+            <state relative-caret-position="-145">
+              <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hireCost.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/hireCost.html">
+      <file leaf-file-name="test.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/test.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+            <state relative-caret-position="586">
+              <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moment.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-9945">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4039" selection-end-column="4" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moment.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/moment.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
               <folding />
             </state>
           </provider>
@@ -60,18 +84,28 @@
       <file leaf-file-name="CPCCFooter" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CPCCFooter">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="137" column="33" selection-start-line="137" selection-start-column="33" selection-end-line="137" selection-end-column="33" />
+            <state relative-caret-position="489">
+              <caret line="219" column="5" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculateHireCost.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calculateHireCost.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/calculateHireCost.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+            <state relative-caret-position="3222">
+              <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="hireCost.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/hireCost.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-509">
+              <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -85,10 +119,13 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/css/hireCost.css" />
         <option value="$PROJECT_DIR$/CPCCFooter" />
-        <option value="$PROJECT_DIR$/hireCost.html" />
         <option value="$PROJECT_DIR$/calculateHireCost.js" />
+        <option value="$PROJECT_DIR$/moment.js" />
+        <option value="$PROJECT_DIR$/js/moment.js" />
+        <option value="$PROJECT_DIR$/css/test.css" />
+        <option value="$PROJECT_DIR$/css/hireCost.css" />
+        <option value="$PROJECT_DIR$/hireCost.html" />
       </list>
     </option>
   </component>
@@ -188,6 +225,9 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Data\Codefiles\HireCost\js" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Data\Codefiles\HireCost\js" />
     </key>
@@ -273,15 +313,15 @@
       <updated>1465241253456</updated>
       <workItem from="1465241265840" duration="5630000" />
       <workItem from="1465323248797" duration="24475000" />
-      <workItem from="1465485332771" duration="28180000" />
+      <workItem from="1465485332771" duration="55874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58285000" />
+    <option name="totallyTimeSpent" value="85979000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1319" height="784" extended-state="7" />
+    <frame x="-8" y="-8" width="1319" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17114352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -412,42 +452,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/hireCost.css">
+    <entry file="file://$PROJECT_DIR$/node_modules/moment/moment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="92" column="12" selection-start-line="92" selection-start-column="10" selection-end-line="92" selection-end-column="12" />
-          <folding />
+        <state relative-caret-position="-9945">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="4039" selection-end-column="4" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hireCost2.txt">
+    <entry file="file://$PROJECT_DIR$/js/moment.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-152">
-          <caret line="166" column="97" selection-start-line="166" selection-start-column="90" selection-end-line="166" selection-end-column="97" />
+        <state relative-caret-position="34">
+          <caret line="2" column="62" selection-start-line="2" selection-start-column="62" selection-end-line="2" selection-end-column="62" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CPCCFooter">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="137" column="33" selection-start-line="137" selection-start-column="33" selection-end-line="137" selection-end-column="33" />
+        <state relative-caret-position="489">
+          <caret line="219" column="5" selection-start-line="219" selection-start-column="5" selection-end-line="219" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hireCost.html">
+    <entry file="file://$PROJECT_DIR$/css/test.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="58" column="8" selection-start-line="58" selection-start-column="8" selection-end-line="58" selection-end-column="8" />
+        <state relative-caret-position="586">
+          <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/calculateHireCost.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state relative-caret-position="3222">
+          <caret line="247" column="0" selection-start-line="247" selection-start-column="0" selection-end-line="247" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/hireCost.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-145">
+          <caret line="53" column="9" selection-start-line="53" selection-start-column="9" selection-end-line="53" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hireCost2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="165" column="86" selection-start-line="165" selection-start-column="8" selection-end-line="166" selection-end-column="105" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/hireCost.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-509">
+          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
           <folding />
         </state>
       </provider>
