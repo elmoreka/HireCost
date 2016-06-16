@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4cf2a381-32f1-4cbd-aa67-130d7f4d6228" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/hireCost.css" afterPath="$PROJECT_DIR$/css/hireCost.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/hireCost.html" afterPath="$PROJECT_DIR$/hireCost.html" />
     </list>
     <ignored path="HireCost.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,21 +34,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hireCost.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="hireCost.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/css/hireCost.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="586">
-              <caret line="293" column="1" selection-start-line="293" selection-start-column="1" selection-end-line="293" selection-end-column="1" />
+            <state relative-caret-position="214">
+              <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/test.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-3970">
-              <caret line="120" column="24" selection-start-line="112" selection-start-column="0" selection-end-line="122" selection-end-column="1" />
+            <state relative-caret-position="1487">
+              <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -98,8 +99,8 @@
       <file leaf-file-name="hireCost.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/hireCost.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-509">
-              <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
+            <state relative-caret-position="292">
+              <caret line="189" column="59" selection-start-line="189" selection-start-column="59" selection-end-line="189" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -307,12 +308,12 @@
       <updated>1465241253456</updated>
       <workItem from="1465241265840" duration="5630000" />
       <workItem from="1465323248797" duration="24475000" />
-      <workItem from="1465485332771" duration="56788000" />
+      <workItem from="1465485332771" duration="62420000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86893000" />
+    <option name="totallyTimeSpent" value="92525000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1319" height="784" extended-state="6" />
@@ -480,14 +481,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/hireCost.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-509">
-          <caret line="80" column="12" selection-start-line="80" selection-start-column="12" selection-end-line="80" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/hireCost2.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="205">
@@ -496,18 +489,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/hireCost.css">
+    <entry file="file://$PROJECT_DIR$/css/test.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="293" column="1" selection-start-line="293" selection-start-column="1" selection-end-line="293" selection-end-column="1" />
+        <state relative-caret-position="1487">
+          <caret line="384" column="34" selection-start-line="384" selection-start-column="34" selection-end-line="384" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/test.css">
+    <entry file="file://$PROJECT_DIR$/hireCost.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3970">
-          <caret line="120" column="24" selection-start-line="112" selection-start-column="0" selection-end-line="122" selection-end-column="1" />
+        <state relative-caret-position="292">
+          <caret line="189" column="59" selection-start-line="189" selection-start-column="59" selection-end-line="189" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/hireCost.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="214">
+          <caret line="221" column="1" selection-start-line="221" selection-start-column="1" selection-end-line="221" selection-end-column="1" />
           <folding />
         </state>
       </provider>

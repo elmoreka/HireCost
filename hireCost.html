@@ -144,51 +144,55 @@
 				<div class="clear"></div>
 			</div>
 			</p>
-			<p><td class="uline"><h4>Rate Schedule</h4></td></p>
-			<p>
-			<b>Note:</b> Non-Exempt employees will submit and be paid from timesheets.
-			Instructors will submit and be paid from contact hour reports.
-			</p>
-			<td class="uline"><h4> Employee Information</h4></td>
-
-			<p>Employee ID:</p>
-			<div class="data">
-				<p>{{empId}}</p>
-				<p>First name:</p>
-				<p>{{fName}}</p>
-				<p>Last name:</p>
-				<p>{{lName}}</p>
-				<p>Position number:</p>
-				<p>{{posNum}}</p>
-				<p>Position title:</p>
-				<p>{{posTitle}}</p>
-				<p>Employee Type:</p>
-				<p>{{empType}}</p>
-				<p>Start date:</p>
-				<p>{{sDate}}</p>
-				<p>End date:</p>
-				<p>{{cDate}}</p>
+			<p><td class="uline"><h3>Rate Schedule</h3></td></p>
+			<div id="help-employee-info">
+				<p>Note: Non-Exempt employees will submit and be paid from timesheets.
+				<br>Instructors will submit and be paid from contact hour reports. </p>
 			</div>
-			<td class="uline"><h4>Budgeting Worksheet</h4></td>
+			<td class="uline"><h3> Employee Information</h3></td>
+				<div id="data">
+				<dt>Employee ID:</dt>
+				<dd>{{empId}}</dd>
+				<dt>First name:</dt>
+				<dd>{{fName}}</dd>
+				<dt>Last name:</dt>
+				<dd>{{lName}}</dd>
+				<dt>Position number:</dt>
+				<dd>{{posNum}}</dd>
+				<dt>Position title:</dt>
+				<dd>{{posTitle}}</dd>
+				<dt>Employee Type:</dt>
+				<dd>{{empType}}</dd>
+			</div>
+			<td class="uline"><h3>Budgeting Worksheet</h3></td>
 
-			<div class="data">
-				<p>GL Account:</p>
-				<p>{{glAcct}}</p>
-				<p>Hourly rate:</p>
-				<p>{{rate}}</p>
-				<p>Estimated Monthly Hours:</p>
-				<p>{{hours}}</p>
-				<p><td class="uline"><h4>Calculated Values</h4></td></p>
-				<p>Estimated Encumbrance for Current Fiscal Year:</p>
-				<p>{{comp}}</p>
+			<div id="data">
+				<dt>GL Account:</dt>
+				<dd>{{glAcct}}</dd>
+				<dt>Start date:</dt>
+				<dd>{{sDate}}</dd>
+				<dt>End date:</dt>
+				<dd>{{cDate}}</dd>
+				<dt>Hourly rate:</dt>
+				<dd>{{rate}}</dd>
+				<dt>Estimated Monthly Hours:</dt>
+				<dd>{{hours}}</dd>
+				<p><td class="uline"><h3>Calculated Values</h3></td></p>
+				<dt>Estimated Encumbrance for Current Fiscal Year:</dt>
+				<dd>{{comp}}</dd>
 			</div>
 
-			<div class="data">
-				<p><td class="uline"><h4>Authorization:</h4></td></p>
-				<p></p>
-				<p>---------------------------------------------------------------------------------------------</p>
-				<p>{{supervisor}} Phone Extension: {{phone}} Date </p>
-				<p></p>
+			<div>
+				<p><td class="uline"><h3>Authorization:</h3></td></p>
+				<div class="signature-box"></div>
+				<div id="supervisor-print">
+					<span>{{supervisor}}</span>
+					<span>Phone Extension: {{phone}}</span>
+					<span>Date</span>
+				</div>
+				<div id="help-employee-info">
+					<p>Please sign, date and submit to Human Resources.</p>
+				</div>
 			</div>
 
 		</div>
