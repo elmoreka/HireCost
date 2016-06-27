@@ -57,7 +57,7 @@ div#printable {
 }
 #header-inner {
     margin: 0 auto;
-    width: 960px;
+    width: 100%;
     height:70px;
     position:relative;
     z-index:1;
@@ -230,7 +230,7 @@ a:focus img {
 }
 #footer {
     min-height: 283px;
-    background: url('++resource++theme.www.images/footer_background.png') repeat-x;
+<!--    background: url('++resource++theme.www.images/footer_background.png') repeat-x; -->
 }
 #footer-navigation {
     list-style: none;
@@ -243,7 +243,7 @@ a:focus img {
     padding-top: 10px;
     width: 14%;
     height: 100px;
-    background: url('++resource++theme.www.images/footer-navigation_divider.png') right center no-repeat;
+<!--    background: url('++resource++theme.www.images/footer-navigation_divider.png') right center no-repeat; -->
     text-align: center;
     font-size: 12px;
     font-weight: bold;

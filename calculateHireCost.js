@@ -1,10 +1,11 @@
-// Calculate the cost of hiring personal for the dates specified
+// This program will calculate the cost of hiring personal for the dates, rate, and hours specified. The program will also retain values for a print friendly page once the
+// calculate/submit button is pressed.
 
 
-//document.getElementById("submit").addEventListener("click", process_form);
-// run process form when the submit button is clicked.
 
-$("#submit").bind( "click", function() { process_form() });
+// Run fuction process_form when the submit button is clicked. Run function reset_form when reset button is clicked
+
+$("#submit").bind( "click", function() { validateForm() });
 $("#reset").bind( "click", function() { reset_form() });
 
 var source = $("#printable").html();
@@ -18,27 +19,100 @@ $(document).ready(function()
 	initialize_dates();
 })
 
+function validateForm() {
+
+
+	
+	var empId = document.forms["calculation_form"]["empId"].value;
+	var fName = document.forms["calculation_form"]["fName"].value;
+	var lName = document.forms["calculation_form"]["lName"].value;
+	var posNum = document.forms["calculation_form"]["posNum"].value;
+	var posTitle = document.forms["calculation_form"]["posTitle"].value;
+	var empType = document.forms["calculation_form"]["empType"].value;
+	var sDate = document.forms["calculation_form"]["sDate"].value;
+	var cDate = document.forms["calculation_form"]["cDate"].value;
+	var glAcct = document.forms["calculation_form"]["glAcct"].value;
+	var rate = document.forms["calculation_form"]["rate"].value;
+	var hours = document.forms["calculation_form"]["hours"].value;
+	var supervisor = document.forms["calculation_form"]["supervisor"].value;
+	var phone = document.forms["calculation_form"]["phone"].value;
+
+	if (empId == null || empId == "") {
+		alert("Employee Id must be entered");
+		return false;
+	}
+	if (fName == null || fName == "") {
+		alert("First name must be entered");
+		return false;
+	}
+	if (lName == null || lName == "") {
+		alert("Last name must be entered");
+		return false;
+	}
+	if (posNum == null || posNum == "") {
+		alert("Position number must be entered");
+		return false;
+	}
+	if (posTitle == null || posTitle == "") {
+		alert("Position title must be entered");
+		return false;
+	}
+	if (empType == null || empType == "") {
+		alert("Employee Type must be entered");
+		return false;
+	}
+	if (sDate == null || sDate == "") {
+		alert("A start date must be selected");
+		return false;
+	}
+	if (cDate == null || cDate == "") {
+		alert("An end date must be selected");
+		return false;
+	}
+	if (glAcct == null || glAcct == "") {
+		alert("GL Account must be entered");
+		return false;
+	}
+	if (rate == null || rate == "") {
+		alert("An hourly rate must be entered");
+		return false;
+	}
+	if (hours == null || hours == "") {
+		alert("The estimated monthly hours must be entered");
+		return false;
+	}
+	if (supervisor == null || supervisor == "") {
+		alert("Supervisor's name must be entered");
+		return false;
+	}
+	if (phone == null || phone == "") {
+		alert("Phone extension must be filled out");
+		return false;
+	}
+
+	process_form();
+}
+
 // process_form will save entered and calculated values to be re-displayed in a print friendly form
-// on a new page.  This function will call the calculate function to calculate the Yearly Emcumbrance.
+// on the page.  This function will call the calculate function to calculate the Yearly Emcumbrance.
 
 function process_form()
 {
+	var empId = $("#empId").val();
+	var fName = $("#fName").val();
+	var lName = $("#lName").val();
+	var posNum = $("#posNum").val();
+	var posTitle = $("#posTitle").val();
+	var empType = $("#empType").val();
 
-	var empId = document.getElementById("empId").value;
-	var fName = document.getElementById("fName").value;
-	var lName = document.getElementById("lName").value;
-	var posNum = document.getElementById("posNum").value;
-	var posTitle = document.getElementById("posTitle").value;
-	var empType = document.getElementById("empType").value;
+	var glAcct = $("#glAcct").val();
+	var sDate = $("#sDate").val();
+	var cDate = $("#cDate").val();
+	var rate = $("#rate").val();
+	var hours = $("#hours").val();
 
-	var glAcct = document.getElementById("glAcct").value;
-	var sDate = document.getElementById("sDate").value;
-	var cDate = document.getElementById("cDate").value;
-	var rate = document.getElementById("rate").value;
-	var hours = document.getElementById("hours").value;
-
-	var supervisor = document.getElementById("supervisor").value;
-	var phone = document.getElementById("phone").value;
+	var supervisor = $("#supervisor").val();
+	var phone = $("#phone").val();
 
 	console.log(sDate);
 	console.log(cDate);
@@ -49,8 +123,8 @@ function process_form()
 	{
 		// return compensation to web page
 
-		document.getElementById("comp").value = calculate(sDate, cDate);
-		var comp = document.getElementById("comp").value;
+		$("#comp").val(calculate(sDate, cDate));
+		var comp = $("#comp").val();
 
 		var data = {
 			'empId': empId,
@@ -95,6 +169,7 @@ function calculate(sDate,cDate)
 	newdate1.setDate(newdate1.getDate() + 2);
 	newdate2.setDate(newdate2.getDate() + 2);
 
+	
 	var dd1 = newdate1.getDate();
 	var mm1 = newdate1.getMonth() + 1;
 	var y1 = newdate1.getFullYear();
@@ -110,11 +185,11 @@ function calculate(sDate,cDate)
 	var date1 = new Date(date1);
 	var date2 = new Date(date2);
 
-	date1 = formatDate(date1);
-	date2 = formatDate(date2);
+	date1 = moment(date1).format('YYYY-MM-DD');
+	date2 = moment(date2).format('YYYY-MM-DD');
 
-	var rate = document.getElementById("rate").value;
-	var hours = document.getElementById("hours").value;	
+	var rate = $("#rate").val();
+	var hours = $("#hours").val();
 	console.log(date1);
 	console.log(date2);
 
@@ -137,6 +212,9 @@ function calculate(sDate,cDate)
 
 function monthsBetween(date1, date2)
 {
+	date1 = new Date(date1);
+	date2 = new Date(date2);
+
 	var date1Month = date1.getMonth();
 	var date2Month = date2.getMonth();
 	var date1Year = date1.getFullYear();
@@ -196,6 +274,7 @@ function reset_form()
 	$("#cDate").val("");
 	$("#rate").val(0);
 	$("#hours").val(0);
+	$("#comp").val(0);
 
 	$("#supervisor").val("");
 	$("#phone").val("");
@@ -234,7 +313,7 @@ function set_end_date_per_start_date(mode) {
 
 	console.log(startDate.getMonth());
 	console.log(startDate.getDate());
-	startDateString = formatDate2(startDate);
+	startDateString = moment(startDate).format('YYYY-MM-DD');
 
 	$("#sDate").val(startDateString);
 	console.log($("#sDate").val());
@@ -243,24 +322,13 @@ function set_end_date_per_start_date(mode) {
 	console.log(startDate.getDate());
 	console.log(endDate.getMonth());
 	console.log(endDate.getDate());
-	endDateString = formatDate2(endDate);
-
+	endDateString = moment(endDate).format('YYYY-MM-DD');
 
 	$("#cDate").val(endDateString);
 	console.log($("#cDate").val());
 	console.log(endDate.getMonth());
 	console.log(endDate.getDate());
-
-	//$.datepicker.setDefaults({
-	//	showOn: 'button',
-	//	buttonImageOnly: true,
-	//	dateFormat: 'mm/dd/yy'});
-
-	//$('#sDate').datepicker();
-	//$('#cDate').datepicker();
-
-
-//	endDateString = endDate.getFullYear() + "-0" + (endDate.getMonth() + 1) + "-0" + endDate.getDate();
+	
 }
 
 function initialize_dates() {
@@ -268,49 +336,4 @@ function initialize_dates() {
 	// Seed with today's date.
 	//
 	set_end_date_per_start_date('initial');
-}
-
-function formatDate(date)
-{
-	if (date.getMonth() < 10 && date.getDate() < 10)
-	{
-		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-0" + date.getDate();
-	}
-	else if (date.getMonth() < 10 && date.getDate() > 9)
-	{
-		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-" +date.getDate();
-	}
-	else if (date.getMonth() > 9 && date.getDate() < 10)
-	{
-		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-0" + date.getDate();
-	}
-	else
-	{
-		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-	}
-
-	date = new Date(dateString);
-	return date;
-}
-
-function formatDate2(date)
-{
-	if (date.getMonth() < 10 && date.getDate() < 10)
-	{
-		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-0" + date.getDate();
-	}
-	else if (date.getMonth() < 10 && date.getDate() > 9)
-	{
-		dateString = date.getFullYear() + "-0" + (date.getMonth() + 1) + "-" +date.getDate();
-	}
-	else if (date.getMonth() > 9 && date.getDate() < 10)
-	{
-		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-0" + date.getDate();
-	}
-	else
-	{
-		dateString = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-	}
-
-	return dateString;
 }
