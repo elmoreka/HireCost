@@ -1,9 +1,9 @@
-// This program will calculate the cost of hiring personal for the dates, rate, and hours specified. The program will also retain values for a print friendly page once the
-// calculate/submit button is pressed.
-
-
-
-// Run fuction process_form when the submit button is clicked. Run function reset_form when reset button is clicked
+// This program will calculate the cost of hiring personal for the dates, rate, and hours specified. The program will
+// also retain values for a print friendly page once the calculate/submit button is pressed.  Handlebars is used to
+// update the page with the printable version of the information.
+// Run fuction validateForm when the submit button is clicked. Once the form is validated, ValidateForm will call the
+// function process_form.  The only validation is that a field is required and end date is greater than start date.
+// Run function reset_form when reset button is clicked.
 
 $("#submit").bind( "click", function() { validateForm() });
 $("#reset").bind( "click", function() { reset_form() });
@@ -19,10 +19,11 @@ $(document).ready(function()
 	initialize_dates();
 })
 
+// Validate fields to confirm no null values.  If field is blank or null, return alert message requesting input from
+// the user.  If all fields are valid, run process_form.
+
 function validateForm() {
 
-
-	
 	var empId = document.forms["calculation_form"]["empId"].value;
 	var fName = document.forms["calculation_form"]["fName"].value;
 	var lName = document.forms["calculation_form"]["lName"].value;
@@ -118,14 +119,15 @@ function process_form()
 	console.log(cDate);
 	console.log(hours);
 	console.log(rate);
-
+	
+	// verify end date is greater than start date.
 	if (sDate < cDate)
 	{
-		// return compensation to web page
+		// store compensation
 
 		$("#comp").val(calculate(sDate, cDate));
 		var comp = $("#comp").val();
-
+		//  data variable will be used by handlebars to create printable version of page.
 		var data = {
 			'empId': empId,
 			'fName': fName,
@@ -148,6 +150,7 @@ function process_form()
 		console.log(hours);
 		console.log(rate);
 
+		// replace div id=="text" with printable version of "data".
 		document.getElementById('text').innerHTML = template(data);
 	}
 	else

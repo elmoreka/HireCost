@@ -63,7 +63,21 @@ div#printable {
     z-index:1;
     background: limegreen;
 }
+.header-inner {
+    margin: 0 auto;
+    width: 100%;
+    height:70px;
+    position:relative;
+    z-index:1;
+    background: limegreen;
+}
 #logo {
+    float: left;
+    padding-top: 15px;
+    width: 50%;
+    position:absolute;
+}
+.logo {
     float: left;
     padding-top: 15px;
     width: 50%;
@@ -153,12 +167,18 @@ div.section {
 div {
     display: block;
 }
+
+.noScriptMessage{
+    text-align: center;
+    color: Red;
+}
 h1, h2, h3, h4, h5, h6 {
     font-family: "Helvetica Neue", Arial, FreeSans, sans-serif;
     font-weight: bold;
     color: Black;
     line-height: 1.5em;
 }
+
 h1, h2 {
     letter-spacing: -0.05em;
 }
@@ -168,9 +188,7 @@ h1 {
 h2 {
     font-size: 1.75em;
 }
-h3 {
-    text-decoration: underline;
-}
+
 h3 {
     display: block;
     font-size: .9em;
@@ -179,6 +197,7 @@ h3 {
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
     font-weight: bold;
+    text-decoration: underline;
 }
 
 h4 {
@@ -208,7 +227,7 @@ p {
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
 }
-#help-employee-info {
+.help-employee-info {
     display: block;
     font-weight: bold;
     font-size: .75em;
@@ -277,12 +296,12 @@ dd {
     width: 300px;
     padding: 2px 2px 0 2px;
 }
-#data dt {
+.data dt {
     display: block;
     font-weight: bold;
     font-size: .75em;
 }
-#data dd {
+.data dd {
     display: block;
     font-size: .75em;
 }
