@@ -65,11 +65,16 @@
 
     <!-- Form data, all data is required, once submit is clicked, form will be validated and emcumbrance will be calculated. -->
     <form id="calculation_form" name="calculation_form" method="post">
+        <h1>Rate Schedule Calculator</h1>
+
+
         <fieldset>
             <div>
-                <h1>Rate Schedule Calculator</h1>
-                <h4>Employee Information</h4>
 
+                <h4>Employee Information</h4>
+                <div class="help-info">
+                    <strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
+                </div>
                 <dl>
                     <dt><label for="empId">Employee ID:</label></dt>
                     <dd><input type="text" id="empId" pattern="[0-9]{7}" placeholder="Employee ID" value="" required/>
@@ -107,6 +112,9 @@
 
         <fieldset>
             <h4>Budgeting Worksheet</h4>
+            <div class="help-info">
+                <strong>Important:</strong> Be aware that submitting a rate sheet beyond the bounds of the current fiscal year will encumber funds for the following year.
+            </div>
             <dl>
                 <dt><label for="glAcct">GL Account:</label></dt>
                 <dd><input type="text" id="glAcct" required placeholder="GL Account" value=""/></dd>
@@ -123,6 +131,9 @@
 
         <fieldset>
             <h4>Supervisor Information</h4>
+            <div class="help-info">
+                Please enter the information for the supervisor of the position described in this Rate Schedule.
+            </div>
             <dl>
                 <dt><label for="supervisor">Supervisor Name:</label></dt>
                 <dd><input type="text" id="supervisor" required placeholder="Supervisor Name" value=""/></dd>

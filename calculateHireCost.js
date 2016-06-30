@@ -119,7 +119,7 @@ function process_form()
 	console.log(cDate);
 	console.log(hours);
 	console.log(rate);
-	
+
 	// verify end date is greater than start date.
 	if (sDate < cDate)
 	{
@@ -272,6 +272,7 @@ function reset_form()
 	$("#lName").val("");
 	$("#posNum").val("");
 	$("#posTitle").val("");
+    $("#empType").val("");
 	$("#glAcct").val("");
 	$("#sDate").val("");
 	$("#cDate").val("");

@@ -160,6 +160,21 @@ body {
     color: Black;
     /* */
 }
+
+.legend {
+    padding: 0 5px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+}
+
+div.help-info {
+    border: 1px dashed red;
+    display: inline;
+    float: right;
+    padding: 5px;
+    width: 200px;
+}
 div.section {
     margin-top: 20px;
 }
@@ -222,8 +237,8 @@ a:link, a:visited {
 }
 p {
     display: block;
-    -webkit-margin-before: .8em;
-    -webkit-margin-after: .8em;
+    -webkit-margin-before: .5em;
+    -webkit-margin-after: .5em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
 }
@@ -283,7 +298,7 @@ a:focus img {
 
 /* Definition lists */
 dl dt, dl dd { margin: 5px 0; }
-dl dd { margin-bottom: 20px; }
+dl dd { margin-bottom: 10px; }
 dl dt { font-weight: bold; }
 dt {
     display: block;
@@ -297,11 +312,11 @@ dd {
 .data dt {
     display: block;
     font-weight: bold;
-    font-size: .75em;
+    font-size: .6em;
 }
 .data dd {
     display: block;
-    font-size: .75em;
+    font-size: .7em;
 }
 
 /* Forms */
