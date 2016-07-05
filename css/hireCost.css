@@ -1,6 +1,4 @@
-div#printable {
-    display:none;
-    }
+/* Header and Footers */
 
 #ribbon {
     padding-top: 9px;
@@ -147,26 +145,6 @@ ul, menu, dir {
     -webkit-padding-start: 40px;
 }
 
-* a img,:link img,:visited img { border:none }
-a { outline: none; }
-table { border-spacing: 0; }
-img { vertical-align: text-bottom; }
-iframe { border-width: 0; border-style:none; }
-/* */
-/* */
-body {
-    font: 100% Arial, FreeSans, sans-serif;
-    background: White;
-    color: Black;
-    /* */
-}
-
-.legend {
-    padding: 0 5px;
-    font-size: 13px;
-    font-weight: bold;
-    color: #333;
-}
 
 div.help-info {
     border: 1px dashed red;
@@ -174,13 +152,6 @@ div.help-info {
     float: right;
     padding: 5px;
     width: 200px;
-}
-div.section {
-    margin-top: 20px;
-}
-
-div {
-    display: block;
 }
 
 .noScriptMessage{
@@ -230,30 +201,12 @@ h2, h3, h4, h5, h6 {
 h2 a, h3 a, h4 a {
     border-bottom: none !important;
 }
-p {
-}
-a:link, a:visited {
-    color: #205c90;
-}
-p {
-    display: block;
-    -webkit-margin-before: .5em;
-    -webkit-margin-after: .5em;
-    -webkit-margin-start: 0px;
-    -webkit-margin-end: 0px;
-}
 .help-employee-info {
     display: block;
     font-weight: bold;
     font-size: .75em;
 }
-#supervisor-print {
-    margin: 0 5px;
-    font-size: .75em;
-}
-#supervisor-print span {
-    margin: 0 5px;
-}
+
 div.signature-box {
     width: 400px;
     height: 50px;
@@ -320,8 +273,43 @@ dd {
 }
 
 /* Forms */
+p {
+}
+a:link, a:visited {
+    color: #205c90;
+}
+p {
+    display: block;
+    -webkit-margin-before: .5em;
+    -webkit-margin-after: .5em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+* a img,:link img,:visited img { border:none }
+a { outline: none; }
+table { border-spacing: 0; }
+img { vertical-align: text-bottom; }
+iframe { border-width: 0; border-style:none; }
+/* */
+/* */
+body {
+    font: 100% Arial, FreeSans, sans-serif;
+    background: White;
+    color: Black;
+    /* */
+}
+
+div.section {
+    margin-top: 20px;
+}
+
+div {
+    display: block;
+}
+
 fieldset { border: 1px solid #aaa; margin: 10px 0; padding: 10px; }
-legend { padding: 0 5px; font-size: 13px; font-weight: bold; color: #333; }
+legend { padding: 0 5px; font-size: 1.25em; font-weight: bold; color: #444; border-radius: 5px;}
 div.field { margin: 10px 0; }
 div.field span.required { color: #ff0000; }
 div.field.radio, div.field.checkbox { margin: 10px 0; }
@@ -382,4 +370,14 @@ div.message
     background-color: #fafafa;
     background-repeat: no-repeat;
     background-position: 10px 10px;
+}
+#supervisor-print {
+    margin: 0 5px;
+    font-size: .75em;
+}
+#supervisor-print span {
+    margin: 0 5px;
+}
+div#printable {
+    display:none;
 }
