@@ -14,37 +14,64 @@
 	<script src="js/nodep-date-input-polyfill.dist.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/handlebars-v4.0.5.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<link href = "css/hireCost.css" rel = "stylesheet" type = "text/css">
+	<link href="css/hireCost.css" rel="stylesheet" type="text/css">
+	<script src="js/jquery-3.0.0.js"></script>
+	<script src="js/webshim/js-webshim/minified/polyfiller.js"></script>
+
+	<script>
+		webshim.activeLang('en');
+		webshims.polyfill('forms');
+		webshims.cfg.no$Switch = true;
+	</script>
+
 
 </head>
-
+<style>
+	input.ng-invalid {
+		background-color: pink;
+	}
+	input.ng-valid {
+		background-color: lightgreen;
+	}
+</style>
 <body>
 
 <div id="text">
-	<div id="ribbon"><ul><li><a href="http://www.cpcc.edu">CPCC</a></li>
-		<li><a href="http://www.cpcc.edu/cce">Corporate &amp; Continuing Education</a></li>
-		<li><a href="http://tix.cpcc.edu">CPCC Tix</a></li>
-		<li><a href="http://cpccfoundation.com/">CPCC Foundation</a></li>
-		<li class="accessibility"><a href="http://www.cpcc.edu/services/accessibility">Accessibility</a></li>
-		<li class="need-help"><a href="http://www.cpcc.edu/services/need-help">Need Help&nbsp;
-			<img alt="Need Help?" src="http://www.cpcc.edu/++resource++theme.www.images/help_icon.png"></a></li></ul>
+	<div id="ribbon">
+		<ul>
+			<li><a href="http://www.cpcc.edu">CPCC</a></li>
+			<li><a href="http://www.cpcc.edu/cce">Corporate &amp; Continuing Education</a></li>
+			<li><a href="http://tix.cpcc.edu">CPCC Tix</a></li>
+			<li><a href="http://cpccfoundation.com/">CPCC Foundation</a></li>
+			<li class="accessibility"><a href="http://www.cpcc.edu/services/accessibility">Accessibility</a></li>
+			<li class="need-help"><a href="http://www.cpcc.edu/services/need-help">Need Help&nbsp;
+				<img alt="Need Help?" src="http://www.cpcc.edu/++resource++theme.www.images/help_icon.png"></a></li>
+		</ul>
 	</div>
 
 	<div id="header-inner">
 		<div id="logo"><img src="http://www.cpcc.edu/++resource++theme.www.images/logo.png" alt="CPCC Logo"></div>
 		<div class="clear"></div>
 	</div>
-	<div class="LSResult" id="LSResult" style=""><div class="LSShadow" id="LSShadow"></div></div>
+	<div class="LSResult" id="LSResult" style="">
+		<div class="LSShadow" id="LSShadow"></div>
+	</div>
 	<div id="menu">
-		<ul id="site-navigation"><li id="portaltab-about" class="plain"><a href="http://www.cpcc.edu/about" title="">
-			About CPCC</a></li>
-			<li id="portaltab-learning" class="plain"><a href="http://www.cpcc.edu/academics" title="">Academics</a></li>
-			<li id="portaltab-studentservices" class="plain"><a href="http://www.cpcc.edu/services" title="">Student Services</a></li>
-			<li id="portaltab-artscommunity" class="plain"><a href="http://www.cpcc.edu/artscommunity" title="">Arts &amp; Community</a></li>
-			<li id="portaltab-careerhub" class="plain"><a href="http://www.cpcc.edu/careerhub" title="">Career Hub</a></li>
+		<ul id="site-navigation">
+			<li id="portaltab-about" class="plain"><a href="http://www.cpcc.edu/about" title="">
+				About CPCC</a></li>
+			<li id="portaltab-learning" class="plain"><a href="http://www.cpcc.edu/academics" title="">Academics</a>
+			</li>
+			<li id="portaltab-studentservices" class="plain"><a href="http://www.cpcc.edu/services" title="">Student
+				Services</a></li>
+			<li id="portaltab-artscommunity" class="plain"><a href="http://www.cpcc.edu/artscommunity" title="">Arts
+				&amp; Community</a></li>
+			<li id="portaltab-careerhub" class="plain"><a href="http://www.cpcc.edu/careerhub" title="">Career Hub</a>
+			</li>
 		</ul>
 	</div><!-- end menu -->
 
@@ -54,114 +81,148 @@
 	</noscript>
 
 	<!-- Form data, all data is required, once submit is clicked, form will be validated and emcumbrance will be calculated. -->
-	<form id="calculation_form" name="calculation_form" method="post">
+	<form id="calculation_form" name="calculation_form" method="post" ng-app="calculation"  ng-controller="validateCtrl" novalidate>
+		<h1>Rate Schedule Calculator</h1>
 		<fieldset>
-			<div>
-				<h1>Rate Schedule Calculator</h1>
-				<h4>Employee Information</h4>
-
-				<dl>
-					<dt><label for="empId">Employee ID:</label></dt>
-					<dd><input type="text" id="empId" pattern="[0-9]{7}" placeholder="Employee ID" value="" required />
-					</dd>
-
-					<dt><label for="fName">First Name:</label></dt>
-					<dd><input type="text" id="fName" required placeholder="First Name" value="" /></dd>
-
-					<dt><label for="lName">Last Name</label></dt>
-					<dd><input type="text" id="lName" required placeholder="Last Name" value="" /></dd>
-
-					<dt><label for="posNum">Position Number</label></dt>
-					<dd><input type="text" id="posNum" required placeholder="Position Number" value="" /></dd>
-
-					<dt><label for="posTitle">Position Title</label></dt>
-					<dd><input type="text" id="posTitle" required placeholder="Position Title" value="" /></dd>
-
-					<dt><label for="empType">Employee Type</label></dt>
-					<dd><select id="empType" name="empType">
-						<option value="" selected>Select Employee Type:</option>
-						<option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)</option>
-						<option value="Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt Instructors)</option>
-					</select></dd>
-
-					<dt><label for="sDate">Start date</label></dt>
-					<dd><input type="date" id="sDate" required /></dd>
-					<dt><label for="cDate">End date</label></dt>
-					<dd><input type="date" id="cDate" required /></dd>
-				</dl>
+			<legend>Employee Information</legend>
+			<div class="help-info">
+				<strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
 			</div>
-		</fieldset>
-
-		<fieldset>
-			<h4>Budgeting Worksheet</h4>
 			<dl>
-				<dt><label for="glAcct">GL Account:</label></dt>
-				<dd><input type="text" id="glAcct" required placeholder="GL Account" value="" /></dd>
+				<dt><label for="empId">Employee ID:</label></dt>
+				<dd><input type="text" id="empId" name="empId" ng-model="empId" pattern="[0-9]" placeholder="Employee ID" value="" required >
+					<span style="color:red" ng-show="myForm.empId.$invalid">
+					<span ng-show="myForm.empId.$error.required">Employee Id is required.</span>
+					</span>
+				</dd>
 
-				<dt><label for="rate">Hourly rate:</label></dt>
-				<dd><input type="number" id="rate" required placeholder="Hourly rate" value="" /></dd>
+				<dt><label for="fName">First Name:</label></dt>
+				<dd><input type="text" id="fName" name="fName" ng-model="fName" required placeholder="First Name" value="" /></dd>
 
-				<dt><label for="hours">Estimated Monthly Hours:</label></dt>
-				<dd><input type="number" id="hours" required placeholder="Monthly Hours" value="" /></dd>
+				<dt><label for="lName">Last Name</label></dt>
+				<dd><input type="text" id="lName" name="lName" ng-model="lName" required placeholder="Last Name" value="" /></dd>
 
-				<dd><input type="hidden" id="comp" value=""  /></dd>
+				<dt><label for="posNum">Position Number</label></dt>
+				<dd><input type="text" id="posNum" name="posNum" ng-model="posNum" required placeholder="Position Number" value="" /></dd>
+
+				<dt><label for="posTitle">Position Title</label></dt>
+				<dd><input type="text" id="posTitle" name="posTitle" ng-model="posTitle" placeholder="Position Title" value="" required /></dd>
+
+				<dt><label for="empType">Employee Type</label></dt>
+				<dd><select id="empType" name="empType" ng-model="empType" required>
+					<option value="" selected>Select Employee Type:</option>
+					<option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)
+					</option>
+					<option value="Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt
+						Instructors)
+					</option>
+				</select></dd>
+
+				<dt><label for="sDate">Start date</label></dt>
+				<dd><input type="date" id="sDate" name="sDate" required/></dd>
+				<dt><label for="cDate">End date</label></dt>
+				<dd><input type="date" id="cDate" name="cDate" required/></dd>
 			</dl>
 		</fieldset>
 
 		<fieldset>
-			<h4>Supervisor Information</h4>
+			<legend>Budgeting Worksheet</legend>
+			<div class="help-info">
+				<strong>Important:</strong> Be aware that submitting a rate sheet beyond the bounds of the current fiscal year will encumber funds for the following year.
+			</div>
+			<dl>
+				<dt><label for="glAcct">GL Account:</label></dt>
+				<dd><input type="text" id="glAcct" name="glAcct" ng-model="glAcct" placeholder="GL Account" value="" required /></dd>
+
+				<dt><label for="rate">Hourly rate:</label></dt>
+				<dd><input type="number" id="rate" name="rate" ng-model="rate" placeholder="Hourly rate" value="" required /></dd>
+
+				<dt><label for="hours">Estimated Monthly Hours:</label></dt>
+				<dd><input type="number" id="hours" name="hours" ng-model="hours" required placeholder="Monthly Hours" value=""/></dd>
+
+				<dd><input type="hidden" id="comp" name="comp" value=""/></dd>
+			</dl>
+		</fieldset>
+
+		<fieldset>
+			<legend>Supervisor Information</legend>
+			<div class="help-info">
+				Please enter the information for the supervisor of the position described in this Rate Schedule.
+			</div>
 			<dl>
 				<dt><label for="supervisor">Supervisor Name:</label></dt>
-				<dd><input type="text" id="supervisor" required placeholder="Supervisor Name" value="" /></dd>
+				<dd><input type="text" id="supervisor" name="supervisor" ng-model="supervisor" required placeholder="Supervisor Name" value=""/></dd>
 
 				<dt><label for="phone">Phone Extension:</label></dt>
-				<dd><input type="text" id="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" value="" /></dd>
+				<dd><input type="text" id="phone" name="phone" ng-model="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" value=""/>
+				</dd>
 			</dl>
 		</fieldset>
 	</form>
 
 	<p>
-		<button class="button" id="submit" value="submit">Calculate</button>
-		<button class="button" id="reset">Reset</button>
+		<button class="button" id="submit" name="submit" value="submit">Calculate</button>
+		<button class="button" id="reset" name="reset" >Reset</button>
 	</p>
 
+	<script>
+		var app = angular.module('calculation', []);
+		app.controller('validateCtrl', function($scope) {
+			$scope.empId = '';
+		});
+	</script>
+
 	<div class="clear"></div>
-	<div id="footer"><ul id="footer-navigation"><li><a href="http://www.cpcc.edu/humanresources/employment">
-		<img src="http://www.cpcc.edu/++resource++theme.www.images/briefcase_icon.png" alt="Jobs at CPCC"></a><br>
-		<a href="http://www.cpcc.edu/humanresources/employment">Jobs at CPCC</a></li>
-		<li><a href="http://www.cpcc.edu/attending/catalog">
-			<img src="http://www.cpcc.edu/++resource++theme.www.images/catalog_icon.png" alt="College Catalog"></a><br>
-			<a href="http://www.cpcc.edu/attending/catalog">College Catalog</a></li>
-		<li><a href="http://www.cpcc.edu/college-safety">
-			<img src="http://www.cpcc.edu/++resource++theme.www.images/icon_college_safety.png" alt="College Safety"></a><br>
-			<a href="http://www.cpcc.edu/college-safety">Safety</a></li><li><a href="http://www.cpcc.edu/site-map">
-			<img src="http://www.cpcc.edu/++resource++theme.www.images/sitemap_icon.png" alt="Site Map"></a><br>
-			<a href="http://www.cpcc.edu/site-map">Site Map</a></li>
-		<li><a href="http://inside.cpcc.edu/">
-			<img src="http://www.cpcc.edu/++resource++theme.www.images/employee_icon.png" alt="Employee Intranet"></a><br>
-			<a href="http://inside.cpcc.edu/">Employee Intranet</a></li><li><a href="http://www.cpcc.edu/services/online-services">
-			<img id="tester" src="http://www.cpcc.edu/++resource++theme.www.images/globe_icon.png" alt="Online Services"></a><br>
-			<a href="http://www.cpcc.edu/services/online-services">Online Services</a></li><li class="last">
-			<a href="http://www.cpcc.edu/contact-us">
-				<img src="http://www.cpcc.edu/++resource++theme.www.images/contact_icon.png" alt="Contact Us"></a><br>
-			<a href="http://www.cpcc.edu/contact-us">Contact Us</a></li></ul>
+	<div id="footer">
+		<ul id="footer-navigation">
+			<li><a href="http://www.cpcc.edu/humanresources/employment">
+				<img src="http://www.cpcc.edu/++resource++theme.www.images/briefcase_icon.png"
+					 alt="Jobs at CPCC"></a><br>
+				<a href="http://www.cpcc.edu/humanresources/employment">Jobs at CPCC</a></li>
+			<li><a href="http://www.cpcc.edu/attending/catalog">
+				<img src="http://www.cpcc.edu/++resource++theme.www.images/catalog_icon.png"
+					 alt="College Catalog"></a><br>
+				<a href="http://www.cpcc.edu/attending/catalog">College Catalog</a></li>
+			<li><a href="http://www.cpcc.edu/college-safety">
+				<img src="http://www.cpcc.edu/++resource++theme.www.images/icon_college_safety.png"
+					 alt="College Safety"></a><br>
+				<a href="http://www.cpcc.edu/college-safety">Safety</a></li>
+			<li><a href="http://www.cpcc.edu/site-map">
+				<img src="http://www.cpcc.edu/++resource++theme.www.images/sitemap_icon.png" alt="Site Map"></a><br>
+				<a href="http://www.cpcc.edu/site-map">Site Map</a></li>
+			<li><a href="http://inside.cpcc.edu/">
+				<img src="http://www.cpcc.edu/++resource++theme.www.images/employee_icon.png"
+					 alt="Employee Intranet"></a><br>
+				<a href="http://inside.cpcc.edu/">Employee Intranet</a></li>
+			<li><a href="http://www.cpcc.edu/services/online-services">
+				<img id="tester" src="http://www.cpcc.edu/++resource++theme.www.images/globe_icon.png"
+					 alt="Online Services"></a><br>
+				<a href="http://www.cpcc.edu/services/online-services">Online Services</a></li>
+			<li class="last">
+				<a href="http://www.cpcc.edu/contact-us">
+					<img src="http://www.cpcc.edu/++resource++theme.www.images/contact_icon.png"
+						 alt="Contact Us"></a><br>
+				<a href="http://www.cpcc.edu/contact-us">Contact Us</a></li>
+		</ul>
 		<div class="clear"></div>
 		<div id="footer-links"><a href="http://www.cpcc.edu/browsers/supported-browsers">Supported Browsers</a> /
-			<a href="http://www.cpcc.edu/services/accessibility">Accessibility</a><br>Central Piedmont Community College</div>
+			<a href="http://www.cpcc.edu/services/accessibility">Accessibility</a><br>Central Piedmont Community College
+		</div>
 	</div>
 </div>
 <!-- Below is the format for the printable form.  Again Handlebars is used to update the page. -->
 <div id="printable">
 	<div class="header-inner">
-		<p>
-		<div class="logo"><img src="http://www.cpcc.edu/++resource++theme.www.images/logo.png" alt="CPCC Logo" /></div>
+		<div class="logo">
+			<img src="http://www.cpcc.edu/++resource++theme.www.images/logo.png" alt="CPCC Logo"/>
+		</div>
 		<div class="clear"></div>
-		</p>
 	</div>
-	<p><h3>Rate Schedule</h3></p>
+	<h3>Rate Schedule</h3>
 	<div class="help-employee-info">
 		<p>Note: Non-Exempt employees will submit and be paid from timesheets.
-			<br>Instructors will submit and be paid from contact hour reports. </p>
+			<br>Instructors will submit and be paid from contact hour reports.
+		</p>
 	</div>
 	<h3> Employee Information</h3>
 	<dl class="data">
@@ -200,7 +261,7 @@
 	</dl>
 
 	<div>
-		<p><h3>Authorization:</h3></p>
+		<h3>Authorization:</h3>
 		<div class="signature-box"></div>
 		<div id="supervisor-print">
 			<span>{{supervisor}}</span>
@@ -217,4 +278,3 @@
 </script>
 </body>
 </html>
-
