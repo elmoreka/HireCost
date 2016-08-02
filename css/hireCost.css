@@ -389,7 +389,6 @@ div#printable {
 .error{
     color: red;
     font-weight: bold;
-    border: 1px solid red;
 }
 
 fieldset div.validated-field input.error, fieldset div.validated-field select.error,
