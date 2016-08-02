@@ -147,66 +147,75 @@ function validateForm() {
 	if (empId == null || empId == "") {
 		// alert("Employee Id must be entered and must be numeric");
 		$('#empIdError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (fName == null || fName == "") {
 		// alert("First name must be entered");
 		$('#fNameError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (lName == null || lName == "") {
 		// alert("Last name must be entered");
 		$('#lNameError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (posNum == null || posNum == "") {
 		// alert("Position number must be entered");
 		$('#posNumError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (posTitle == null || posTitle == "") {
 		// alert("Position title must be entered");
 		$('#posTitleError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (empType == null || empType == "") {
 		// alert("Employee Type must be entered");
 		$('#empTypeError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (sDate == null || sDate == "") {
 		// alert("A start date must be selected");
 		$('#sDateError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (cDate == null || cDate == "") {
 		// alert("An end date must be selected");
 		$('#cDateError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (glAcct == null || glAcct == "") {
 		// alert("GL Account must be entered");
 		$('#glAcctError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (rate == null || rate == "") {
 		// alert("An hourly rate must be entered");
 		$('#rateError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (hours == null || hours == "") {
 		// alert("The estimated monthly hours must be entered");
 		$('#hoursError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (supervisor == null || supervisor == "") {
 		// alert("Supervisor's name must be entered");
 		$('#supervisorError').removeClass("hide")
-		return false;
+		// return false;
 	}
 	if (phone == null || phone == "") {
 		// alert("Phone extension must be filled out");
 		$('#phoneError').removeClass("hide")
+		// return false;
+	}
+
+	if ((empId == null || empId == "") || (fName == null || fName == "") || (lName == null || lName == "") ||
+		(posNum == null || posNum == "") || (posTitle == null || posTitle == "") || (empType == null || empType == "")
+		|| (sDate == null || sDate == "") || (cDate == null || cDate == "") || (glAcct == null || glAcct == "") ||
+		(rate == null || rate == "") || (hours == null || hours == "") || (supervisor == null || supervisor == "") ||
+		(phone == null || phone == ""))
+	{
 		return false;
 	}
 
