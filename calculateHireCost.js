@@ -17,12 +17,118 @@ $(document).ready(function()
 	$('#cDate').val("");
 
 	initialize_dates();
+
+	$("#calculation_form").validate({
+
+		//     submitHandler: function(form) {
+		//             form.submit();
+		//     },
+		rules: {
+			"empId": {
+				digits: true,
+				required: {}
+			},
+			"fName": {
+				required: {}
+			},
+			"lName": {
+				required: {}
+			},
+			"posNum": {
+				required: {}
+			},
+			"posTitle": {
+				required: {}
+			},
+			"empType": {
+				required: {}
+			},
+			"sDate": {
+				required: {}
+			},
+			"cDate": {
+				required: {}
+			},
+			"glAcct": {
+				required: {}
+			},
+			"rate": {
+				required: {}
+			},
+			"hours": {
+				required: {}
+			},
+			"supervisor": {
+				required: {}
+			},
+			"phone": {
+				required: {}
+			},
+
+
+		},
+		messages: {}
+
+	});
 })
 
 // Validate fields to confirm no null values.  If field is blank or null, return alert message requesting input from
 // the user.  If all fields are valid, run process_form.
 
 function validateForm() {
+
+	$("#calculation_form").validate({
+
+		//     submitHandler: function(form) {
+		//             form.submit();
+		//     },
+		rules: {
+			"empId": {
+				digits: true,
+				required: {}
+			},
+			"fName": {
+				required: {}
+			},
+			"lName": {
+				required: {}
+			},
+			"posNum": {
+				required: {}
+			},
+			"posTitle": {
+				required: {}
+			},
+			"empType": {
+				required: {}
+			},
+			"sDate": {
+				required: {}
+			},
+			"cDate": {
+				required: {}
+			},
+			"glAcct": {
+				required: {}
+			},
+			"rate": {
+				required: {}
+			},
+			"hours": {
+				required: {}
+			},
+			"supervisor": {
+				required: {}
+			},
+			"phone": {
+				required: {}
+			},
+
+
+		},
+		messages: {}
+
+	});
 
 	var empId = document.forms["calculation_form"]["empId"].value;
 	var fName = document.forms["calculation_form"]["fName"].value;
@@ -39,55 +145,68 @@ function validateForm() {
 	var phone = document.forms["calculation_form"]["phone"].value;
 
 	if (empId == null || empId == "") {
-		alert("Employee Id must be entered");
+		// alert("Employee Id must be entered and must be numeric");
+		$('#empIdError').removeClass("hide")
 		return false;
 	}
 	if (fName == null || fName == "") {
-		alert("First name must be entered");
+		// alert("First name must be entered");
+		$('#fNameError').removeClass("hide")
 		return false;
 	}
 	if (lName == null || lName == "") {
-		alert("Last name must be entered");
+		// alert("Last name must be entered");
+		$('#lNameError').removeClass("hide")
 		return false;
 	}
 	if (posNum == null || posNum == "") {
-		alert("Position number must be entered");
+		// alert("Position number must be entered");
+		$('#posNumError').removeClass("hide")
 		return false;
 	}
 	if (posTitle == null || posTitle == "") {
-		alert("Position title must be entered");
+		// alert("Position title must be entered");
+		$('#posTitleError').removeClass("hide")
 		return false;
 	}
 	if (empType == null || empType == "") {
-		alert("Employee Type must be entered");
+		// alert("Employee Type must be entered");
+		$('#empTypeError').removeClass("hide")
 		return false;
 	}
 	if (sDate == null || sDate == "") {
-		alert("A start date must be selected");
+		// alert("A start date must be selected");
+		$('#sDateError').removeClass("hide")
 		return false;
 	}
 	if (cDate == null || cDate == "") {
-		alert("An end date must be selected");
+		// alert("An end date must be selected");
+		$('#cDateError').removeClass("hide")
 		return false;
 	}
 	if (glAcct == null || glAcct == "") {
-		alert("GL Account must be entered");
+		// alert("GL Account must be entered");
+		$('#glAcctError').removeClass("hide")
 		return false;
 	}
 	if (rate == null || rate == "") {
-		alert("An hourly rate must be entered");
+		// alert("An hourly rate must be entered");
+		$('#rateError').removeClass("hide")
 		return false;
 	}
 	if (hours == null || hours == "") {
-		alert("The estimated monthly hours must be entered");
+		// alert("The estimated monthly hours must be entered");
+		$('#hoursError').removeClass("hide")
 		return false;
 	}
 	if (supervisor == null || supervisor == "") {
-		alert("Supervisor's name must be entered");
+		// alert("Supervisor's name must be entered");
+		$('#supervisorError').removeClass("hide")
 		return false;
 	}
 	if (phone == null || phone == "") {
-		alert("Phone extension must be filled out");
+		// alert("Phone extension must be filled out");
+		$('#phoneError').removeClass("hide")
 		return false;
 	}
 
@@ -341,3 +460,7 @@ function initialize_dates() {
 	//
 	set_end_date_per_start_date('initial');
 }
+
+$(function() {
+	console.log("BK Ready");
+});

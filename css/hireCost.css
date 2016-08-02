@@ -381,3 +381,18 @@ div.message
 div#printable {
     display:none;
 }
+
+.hide {
+    display: none;
+}
+
+.error{
+    color: red;
+    font-weight: bold;
+}
+
+fieldset div.validated-field input.error, fieldset div.validated-field select.error,
+fieldset div.validated-field textarea.error, fieldset table.unformatted-table input.error,
+fieldset table.unformatted-table select.error {
+    border: 1px solid red;
+}

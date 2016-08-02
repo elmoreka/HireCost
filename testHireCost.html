@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+<!-- div id="text" is used by handlebars in the calculateHireCost.js file to replace web page with a printable version
+  of the information. Page includes CPCC logo and standard header and footer.  This form contains data for a new hire.
+  The js program will calculate the cost of hiring based on the hours, rate and dates entered. The only validation is
+  that the information is required and end date is greater than the start date. This page/program does not connect to
+  the server. -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Cost</title>
+    <script src="js/jquery-2.2.4.min.js"></script>
+    <script src="js/nodep-date-input-polyfill.dist.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/handlebars-v4.0.5.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <link href="css/hireCost.css" rel="stylesheet" type="text/css">
+    <script src="js/webshim/js-webshim/minified/polyfiller.js"></script>
+
+    <script>
+        webshim.activeLang('en');
+        webshims.polyfill('forms');
+        webshims.cfg.no$Switch = true;
+    </script>
+
+
+</head>
+
+<body>
+
+<!-- Form data, all data is required, once submit is clicked, form will be validated and emcumbrance will be calculated. -->
+<form id="calculation_form" name="calculation_form" method="post">
+    <h1>Rate Schedule Calculator</h1>
+
+
+    <fieldset>
+
+        <legend>Employee Information</legend>
+        <div class="help-info">
+            <strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
+        </div>
+        <dl>
+            <dt><label for="empId">Employee ID:</label></dt>
+            <dd><input type="text" id="empId" name="empId" pattern="[0-9]{6,}" placeholder="Employee ID" value="" required >
+                <label id="empIdError" for="empId" class="error hide">Please enter numbers only. This field is required.</label>
+            </dd>
+
+            <dt><label for="fName">First Name:</label></dt>
+            <dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" />
+                <label id="fNameError" for="fName" class="error hide">This field is required.</label>
+            </dd>
+
+            <dt><label for="lName">Last Name</label></dt>
+            <dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" />
+                <label id="lNameError" for="lName" class="error hide">This field is required.</label>
+            </dd>
+
+        </dl>
+    </fieldset>
+</form>
+
+<p>
+    <button class="button" id="submit" name="submit" value="submit">Calculate</button>
+    <button class="button" id="reset" name="reset" >Reset</button>
+</p>
+    <script src="testcalculateHireCost.js">
+    </script>
+</body>
+</html>

@@ -9,6 +9,8 @@
 
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Employee Cost</title>
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/nodep-date-input-polyfill.dist.js"></script>
@@ -21,6 +23,9 @@
 	<link href="css/hireCost.css" rel="stylesheet" type="text/css">
 	<script src="js/jquery-3.0.0.js"></script>
 	<script src="js/webshim/js-webshim/minified/polyfiller.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
 
 	<script>
 		webshim.activeLang('en');
@@ -81,7 +86,7 @@
 	</noscript>
 
 	<!-- Form data, all data is required, once submit is clicked, form will be validated and emcumbrance will be calculated. -->
-	<form id="calculation_form" name="calculation_form" method="post" ng-app="calculation"  ng-controller="validateCtrl" novalidate>
+	<form id="calculation_form" name="calculation_form" method="post" ng-app="calculation"  ng-controller="validateCtrl" role="form" data-toggle="validator">
 		<h1>Rate Schedule Calculator</h1>
 		<fieldset>
 			<legend>Employee Information</legend>
@@ -90,20 +95,19 @@
 			</div>
 			<dl>
 				<dt><label for="empId">Employee ID:</label></dt>
-				<dd><input type="text" id="empId" name="empId" ng-model="empId" pattern="[0-9]" placeholder="Employee ID" value="" required >
-					<span style="color:red" ng-show="myForm.empId.$invalid">
-					<span ng-show="myForm.empId.$error.required">Employee Id is required.</span>
-					</span>
+				<dd><input type="text" id="empId" name="empId" ng-model="empId" pattern="[0-9]" placeholder="Employee ID" value=""
+						   class="form-control" data-error="This field is required" required >
+					<div class="help-block with-errors"></div>
 				</dd>
 
 				<dt><label for="fName">First Name:</label></dt>
-				<dd><input type="text" id="fName" name="fName" ng-model="fName" required placeholder="First Name" value="" /></dd>
+				<dd><input type="text" id="fName" name="fName" ng-model="fName"  placeholder="First Name" value="" required></dd>
 
 				<dt><label for="lName">Last Name</label></dt>
-				<dd><input type="text" id="lName" name="lName" ng-model="lName" required placeholder="Last Name" value="" /></dd>
+				<dd><input type="text" id="lName" name="lName" ng-model="lName"  placeholder="Last Name" value="" required></dd>
 
 				<dt><label for="posNum">Position Number</label></dt>
-				<dd><input type="text" id="posNum" name="posNum" ng-model="posNum" required placeholder="Position Number" value="" /></dd>
+				<dd><input type="text" id="posNum" name="posNum" ng-model="posNum"  placeholder="Position Number" value="" required></dd>
 
 				<dt><label for="posTitle">Position Title</label></dt>
 				<dd><input type="text" id="posTitle" name="posTitle" ng-model="posTitle" placeholder="Position Title" value="" required /></dd>
@@ -138,7 +142,7 @@
 				<dd><input type="number" id="rate" name="rate" ng-model="rate" placeholder="Hourly rate" value="" required /></dd>
 
 				<dt><label for="hours">Estimated Monthly Hours:</label></dt>
-				<dd><input type="number" id="hours" name="hours" ng-model="hours" required placeholder="Monthly Hours" value=""/></dd>
+				<dd><input type="number" id="hours" name="hours" ng-model="hours"  placeholder="Monthly Hours" value="" required /></dd>
 
 				<dd><input type="hidden" id="comp" name="comp" value=""/></dd>
 			</dl>
@@ -151,10 +155,10 @@
 			</div>
 			<dl>
 				<dt><label for="supervisor">Supervisor Name:</label></dt>
-				<dd><input type="text" id="supervisor" name="supervisor" ng-model="supervisor" required placeholder="Supervisor Name" value=""/></dd>
+				<dd><input type="text" id="supervisor" name="supervisor" ng-model="supervisor"  placeholder="Supervisor Name" value="" required /></dd>
 
 				<dt><label for="phone">Phone Extension:</label></dt>
-				<dd><input type="text" id="phone" name="phone" ng-model="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" value=""/>
+				<dd><input type="text" id="phone" name="phone" ng-model="phone" pattern="[0-9]{4}"  placeholder="Phone Extension" value="" required/>
 				</dd>
 			</dl>
 		</fieldset>
