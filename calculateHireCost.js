@@ -5,7 +5,7 @@
 // function process_form.  The only validation is that a field is required and end date is greater than start date.
 // Run function reset_form when reset button is clicked.
 
-$("#submit").bind( "click", function() { validateForm() });
+$("#submit").bind( "click", function() { validateChange() });
 $("#reset").bind( "click", function() { reset_form() });
 
 var source = $("#printable").html();
@@ -341,3 +341,29 @@ function initialize_dates() {
 	//
 	set_end_date_per_start_date('initial');
 }
+
+// $(function () {
+//	
+// 	// $('#calculation_form select').change(validate($(this)))
+// });
+
+function validate(el) {
+	// console.log("el is:", el)
+	if (el.val() === null || el.val() === "") {
+		console.log("error on ", el);
+		el.removeClass("error").addClass("hidden");
+		return false;
+	} else {
+		console.log("it's valid")
+		el.removeClass("hidden").addClass("error");
+	}
+}
+
+function validateChange() {
+	$('#calculation_form input').map(function (idx, el) {
+		$(el).change(validate($(this)))
+
+	});
+	process_form();
+}
+

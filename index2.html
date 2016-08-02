@@ -85,14 +85,19 @@
                 </div>
                 <dl>
                     <dt><label for="empId">Employee ID:</label></dt>
-                    <dd><input type="text" id="empId" name="empId" pattern="[0-9]" placeholder="Employee ID" value="" required >
+                    <dd><input type="text" id="empId" name="empId" pattern="[0-9]{7}" placeholder="Employee ID" value="" required >
+                        <label id="empIdError" class="error hidden">This field is required.</label>
                     </dd>
 
                     <dt><label for="fName">First Name:</label></dt>
-                    <dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" /></dd>
+                    <dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" />
+                        <label id="fNameError" class="error hidden">This field is required.</label>
+                    </dd>
 
                     <dt><label for="lName">Last Name</label></dt>
-                    <dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" /></dd>
+                    <dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" />
+                        <label id="lNameError" class="error hidden">This field is required.</label>
+                    </dd>
 
                     <dt><label for="posNum">Position Number</label></dt>
                     <dd><input type="text" id="posNum" name="posNum" required placeholder="Position Number" value="" /></dd>
