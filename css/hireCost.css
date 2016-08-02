@@ -382,12 +382,18 @@ div#printable {
     display:none;
 }
 
-.error {
-    color: red;
-    font-weight: bold;
-    border: 2px solid red;
+.hide {
+    display: none;
 }
 
-.hidden {
-    display: none;
+.error{
+    color: red;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+fieldset div.validated-field input.error, fieldset div.validated-field select.error,
+fieldset div.validated-field textarea.error, fieldset table.unformatted-table input.error,
+fieldset table.unformatted-table select.error {
+    border: 1px solid red;
 }
