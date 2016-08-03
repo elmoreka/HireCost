@@ -9,7 +9,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Employee Cost</title>
+    <title>Rate Schedule</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/nodep-date-input-polyfill.dist.js"></script>
     <script src="js/moment.js"></script>
@@ -79,57 +79,57 @@
 
         <fieldset>
 
-            <legend>Employee Information</legend>
-            <div class="help-info">
-                <strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
-            </div>
-            <dl>
-                <dt><label for="empId">Employee ID:</label></dt>
-                <dd><input type="text" id="empId" name="empId" pattern="[0-9]{6,}" placeholder="Employee ID" value="" required >
-                    <label id="empIdError" for="empId" class="error hide">Please enter numbers only. This field is required.</label>
-                </dd>
+                <legend>Employee Information</legend>
+                <div class="help-info">
+                    <strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
+                </div>
+                <dl>
+                    <dt><label for="empId">Employee ID:</label></dt>
+                    <dd><input type="text" id="empId" name="empId" pattern="[0-9]{6, }" placeholder="Employee ID" value="" required >
+                        <label id="empIdError" for="empId" class="error hide">Please enter numbers only.</label>
+                    </dd>
 
-                <dt><label for="fName">First Name:</label></dt>
-                <dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" />
-                    <label id="fNameError" for="fName" class="error hide">This field is required.</label>
-                </dd>
+                    <dt><label for="fName">First Name:</label></dt>
+                    <dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" />
+                        <label id="fNameError" for="fName" class="error hide">This field is required.</label>
+                    </dd>
 
-                <dt><label for="lName">Last Name</label></dt>
-                <dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" />
-                    <label id="lNameError" for="lName" class="error hide">This field is required.</label>
-                </dd>
+                    <dt><label for="lName">Last Name</label></dt>
+                    <dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" />
+                        <label id="lNameError" for="lName" class="error hide">This field is required.</label>
+                    </dd>
 
-                <dt><label for="posNum">Position Number</label></dt>
-                <dd><input type="text" id="posNum" name="posNum" required placeholder="Position Number" value="" />
-                    <label id="posNumError" for="posNum" class="error hide">This field is required.</label>
-                </dd>
+                    <dt><label for="posNum">Position Number</label></dt>
+                    <dd><input type="text" id="posNum" name="posNum" required placeholder="Position Number" value="" />
+                        <label id="posNumError" for="posNum" class="error hide">This field is required.</label>
+                    </dd>
 
-                <dt><label for="posTitle">Position Title</label></dt>
-                <dd><input type="text" id="posTitle" name="posTitle" placeholder="Position Title" value="" required />
-                    <label id="posTitleError" for="posTitle" class="error hide">This field is required.</label>
-                </dd>
+                    <dt><label for="posTitle">Position Title</label></dt>
+                    <dd><input type="text" id="posTitle" name="posTitle" placeholder="Position Title" value="" required />
+                        <label id="posTitleError" for="posTitle" class="error hide">This field is required.</label>
+                    </dd>
 
-                <dt><label for="empType">Employee Type</label></dt>
-                <dd><select id="empType" name="empType">
-                    <option value="" selected>Select Employee Type:</option>
-                    <option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)
-                    </option>
-                    <option value="Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt
-                        Instructors)
-                    </option>
-                </select>
-                    <label id="empTypeError" for="empType" class="error hide">This field is required.</label>
-                </dd>
+                    <dt><label for="empType">Employee Type</label></dt>
+                    <dd><select id="empType" name="empType">
+                        <option value="" selected>Select Employee Type:</option>
+                        <option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)
+                        </option>
+                        <option value="Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt
+                            Instructors)
+                        </option>
+                    </select>
+                        <label id="empTypeError" for="empType" class="error hide">This field is required.</label>
+                    </dd>
 
-                <dt><label for="sDate">Start date</label></dt>
-                <dd><input type="date" id="sDate" name="sDate" required/>
-                    <label id="sDateError" for="sDate" class="error hide">This field is required.</label>
-                </dd>
-                <dt><label for="cDate">End date</label></dt>
-                <dd><input type="date" id="cDate" name="cDate" required/>
-                    <label id="cDateError" for="cDate" class="error hide">This field is required.</label>
-                </dd>
-            </dl>
+                    <dt><label for="sDate">Start date</label></dt>
+                    <dd><input type="date" id="sDate" name="sDate" required/>
+                        <label id="sDateError" for="sDate" class="error hide">This field is required.</label>
+                    </dd>
+                    <dt><label for="cDate">End date</label></dt>
+                    <dd><input type="date" id="cDate" name="cDate" required/>
+                        <label id="cDateError" for="cDate" class="error hide">This field is required.</label>
+                    </dd>
+                </dl>
         </fieldset>
 
         <fieldset>

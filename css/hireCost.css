@@ -395,4 +395,8 @@ fieldset div.validated-field input.error, fieldset div.validated-field select.er
 fieldset div.validated-field textarea.error, fieldset table.unformatted-table input.error,
 fieldset table.unformatted-table select.error {
     border: 1px solid red;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> e5f9799211b2dbde94e6ccd35300d4f42311043b
