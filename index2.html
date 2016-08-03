@@ -9,7 +9,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Employee Cost</title>
+    <title>Rate Schedule</title>
     <script src="js/jquery-2.2.4.min.js"></script>
     <script src="js/nodep-date-input-polyfill.dist.js"></script>
     <script src="js/moment.js"></script>
@@ -85,8 +85,8 @@
                 </div>
                 <dl>
                     <dt><label for="empId">Employee ID:</label></dt>
-                    <dd><input type="text" id="empId" name="empId" pattern="[0-9]{6,}" placeholder="Employee ID" value="" required >
-                        <label id="empIdError" for="empId" class="error hide">Please enter numbers only. This field is required.</label>
+                    <dd><input type="text" id="empId" name="empId" pattern="[0-9]{6, }" placeholder="Employee ID" value="" required >
+                        <label id="empIdError" for="empId" class="error hide">Please enter numbers only.</label>
                     </dd>
 
                     <dt><label for="fName">First Name:</label></dt>
