@@ -9,23 +9,17 @@
 
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Employee Cost</title>
+	<title>Rate Schedule</title>
 	<script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/nodep-date-input-polyfill.dist.js"></script>
 	<script src="js/moment.js"></script>
 	<script src="js/handlebars-v4.0.5.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script type="text/javascript" src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.validate.min.js"></script>
+	<script src="js/jquery.validate.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<link href="css/hireCost.css" rel="stylesheet" type="text/css">
-	<script src="js/jquery-3.0.0.js"></script>
 	<script src="js/webshim/js-webshim/minified/polyfiller.js"></script>
-	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-
 
 	<script>
 		webshim.activeLang('en');
@@ -35,14 +29,7 @@
 
 
 </head>
-<style>
-	input.ng-invalid {
-		background-color: pink;
-	}
-	input.ng-valid {
-		background-color: lightgreen;
-	}
-</style>
+
 <body>
 
 <div id="text">
@@ -86,46 +73,62 @@
 	</noscript>
 
 	<!-- Form data, all data is required, once submit is clicked, form will be validated and emcumbrance will be calculated. -->
-	<form id="calculation_form" name="calculation_form" method="post" ng-app="calculation"  ng-controller="validateCtrl" role="form" data-toggle="validator">
+	<form id="calculation_form" name="calculation_form" method="post">
 		<h1>Rate Schedule Calculator</h1>
+
+
 		<fieldset>
+
 			<legend>Employee Information</legend>
 			<div class="help-info">
 				<strong>Note:</strong> Non-Exempt employees will submit and be paid from timesheets.  Instructors will submit and be paid from contact hour reports.
 			</div>
 			<dl>
 				<dt><label for="empId">Employee ID:</label></dt>
-				<dd><input type="text" id="empId" name="empId" ng-model="empId" pattern="[0-9]" placeholder="Employee ID" value=""
-						   class="form-control" data-error="This field is required" required >
-					<div class="help-block with-errors"></div>
+				<dd><input type="text" id="empId" name="empId" pattern="[0-9]{6, }" placeholder="Employee ID" value="" required >
+					<label id="empIdError" for="empId" class="error hide">Please enter numbers only.</label>
 				</dd>
 
 				<dt><label for="fName">First Name:</label></dt>
-				<dd><input type="text" id="fName" name="fName" ng-model="fName"  placeholder="First Name" value="" required></dd>
+				<dd><input type="text" id="fName" name="fName" required placeholder="First Name" value="" />
+					<label id="fNameError" for="fName" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="lName">Last Name</label></dt>
-				<dd><input type="text" id="lName" name="lName" ng-model="lName"  placeholder="Last Name" value="" required></dd>
+				<dd><input type="text" id="lName" name="lName" required placeholder="Last Name" value="" />
+					<label id="lNameError" for="lName" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="posNum">Position Number</label></dt>
-				<dd><input type="text" id="posNum" name="posNum" ng-model="posNum"  placeholder="Position Number" value="" required></dd>
+				<dd><input type="text" id="posNum" name="posNum" required placeholder="Position Number" value="" />
+					<label id="posNumError" for="posNum" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="posTitle">Position Title</label></dt>
-				<dd><input type="text" id="posTitle" name="posTitle" ng-model="posTitle" placeholder="Position Title" value="" required /></dd>
+				<dd><input type="text" id="posTitle" name="posTitle" placeholder="Position Title" value="" required />
+					<label id="posTitleError" for="posTitle" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="empType">Employee Type</label></dt>
-				<dd><select id="empType" name="empType" ng-model="empType" required>
+				<dd><select id="empType" name="empType">
 					<option value="" selected>Select Employee Type:</option>
 					<option value="Hourly Pay Rate (Non Exempt Employees)">Hourly Pay Rate (Non Exempt Employees)
 					</option>
 					<option value="Contact Hour Pay Rate (Exempt Instructors)">Contact Hour Pay Rate (Exempt
 						Instructors)
 					</option>
-				</select></dd>
+				</select>
+					<label id="empTypeError" for="empType" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="sDate">Start date</label></dt>
-				<dd><input type="date" id="sDate" name="sDate" required/></dd>
+				<dd><input type="date" id="sDate" name="sDate" required/>
+					<label id="sDateError" for="sDate" class="error hide">This field is required.</label>
+				</dd>
 				<dt><label for="cDate">End date</label></dt>
-				<dd><input type="date" id="cDate" name="cDate" required/></dd>
+				<dd><input type="date" id="cDate" name="cDate" required/>
+					<label id="cDateError" for="cDate" class="error hide">This field is required.</label>
+				</dd>
 			</dl>
 		</fieldset>
 
@@ -136,13 +139,19 @@
 			</div>
 			<dl>
 				<dt><label for="glAcct">GL Account:</label></dt>
-				<dd><input type="text" id="glAcct" name="glAcct" ng-model="glAcct" placeholder="GL Account" value="" required /></dd>
+				<dd><input type="text" id="glAcct" name="glAcct" placeholder="GL Account" value="" required />
+					<label id="glAcctError" for="glAcct" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="rate">Hourly rate:</label></dt>
-				<dd><input type="number" id="rate" name="rate" ng-model="rate" placeholder="Hourly rate" value="" required /></dd>
+				<dd><input type="number" id="rate" name="rate" placeholder="Hourly rate" value="" required />
+					<label id="rateError" for="rate" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="hours">Estimated Monthly Hours:</label></dt>
-				<dd><input type="number" id="hours" name="hours" ng-model="hours"  placeholder="Monthly Hours" value="" required /></dd>
+				<dd><input type="number" id="hours" name="hours" required placeholder="Monthly Hours" value=""/>
+					<label id="hoursError" for="hours" class="error hide">This field is required.</label>
+				</dd>
 
 				<dd><input type="hidden" id="comp" name="comp" value=""/></dd>
 			</dl>
@@ -155,10 +164,13 @@
 			</div>
 			<dl>
 				<dt><label for="supervisor">Supervisor Name:</label></dt>
-				<dd><input type="text" id="supervisor" name="supervisor" ng-model="supervisor"  placeholder="Supervisor Name" value="" required /></dd>
+				<dd><input type="text" id="supervisor" name="supervisor" required placeholder="Supervisor Name" value=""/>
+					<label id="supervisorError" for="supervisor" class="error hide">This field is required.</label>
+				</dd>
 
 				<dt><label for="phone">Phone Extension:</label></dt>
-				<dd><input type="text" id="phone" name="phone" ng-model="phone" pattern="[0-9]{4}"  placeholder="Phone Extension" value="" required/>
+				<dd><input type="text" id="phone" name="phone" pattern="[0-9]{4}" required placeholder="Phone Extension" value=""/>
+					<label id="phoneError" for="phone" class="error hide">This field is required.</label>
 				</dd>
 			</dl>
 		</fieldset>
@@ -168,13 +180,6 @@
 		<button class="button" id="submit" name="submit" value="submit">Calculate</button>
 		<button class="button" id="reset" name="reset" >Reset</button>
 	</p>
-
-	<script>
-		var app = angular.module('calculation', []);
-		app.controller('validateCtrl', function($scope) {
-			$scope.empId = '';
-		});
-	</script>
 
 	<div class="clear"></div>
 	<div id="footer">
@@ -278,7 +283,8 @@
 	</div>
 
 </div>
-<script src="calculateHireCost.js">
+<script src="calculateHireCost2.js">
 </script>
 </body>
 </html>
+
