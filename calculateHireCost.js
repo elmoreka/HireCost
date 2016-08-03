@@ -85,11 +85,7 @@ function validateForm() {
 		rules: {
 			"empId": {
 				digits: true,
-				required: {},
-				minlength: 6,
-				messages: {
-					minlength: jQuery.validator.format("Please, at least 6 digits are necessary")
-				}
+				required: {}
 			},
 			"fName": {
 				required: {}
@@ -233,11 +229,6 @@ function process_form()
 	var supervisor = $("#supervisor").val();
 	var phone = $("#phone").val();
 
-	console.log(sDate);
-	console.log(cDate);
-	console.log(hours);
-	console.log(rate);
-
 	// verify end date is greater than start date.
 	if (sDate < cDate)
 	{
@@ -262,11 +253,6 @@ function process_form()
 			'supervisor': supervisor,
 			'phone': phone,
 		}
-
-		console.log(sDate);
-		console.log(cDate);
-		console.log(hours);
-		console.log(rate);
 
 		// replace div id=="text" with printable version of "data".
 		document.getElementById('text').innerHTML = template(data);
@@ -311,8 +297,6 @@ function calculate(sDate,cDate)
 
 	var rate = $("#rate").val();
 	var hours = $("#hours").val();
-	console.log(date1);
-	console.log(date2);
 
 	// retrieve number of months
 	var months = monthsBetween(date1, date2);
@@ -411,46 +395,30 @@ function set_end_date_per_start_date(mode) {
 	if (mode == 'initial')
 	{
 		startDate = new Date();
-		console.log(startDate);
 	}
 	else
 	{
 		currentStartDate = $("#sDate").val();
-		console.log(currentStartDate);
 		parts = currentStartDate.value.split("/");
 		startDate = new Date(parseInt(parts[2]),(parseInt(parts[0])),parseInt(parts[1]));
-		console.log(startDate);
 	}
 	if (startDate.getMonth() > 4)
 	{
-		console.log(startDate);
 		endDate = new Date((startDate.getFullYear() + 1), 4, 31);
-		console.log(endDate);
 	}
 	else
 	{
 		endDate = new Date(startDate.getFullYear(), 4, 31);
-		console.log(endDate);
 	}
 
-	console.log(startDate.getMonth());
-	console.log(startDate.getDate());
 	startDateString = moment(startDate).format('YYYY-MM-DD');
 
 	$("#sDate").val(startDateString);
-	console.log($("#sDate").val());
 
-	console.log(startDate.getMonth());
-	console.log(startDate.getDate());
-	console.log(endDate.getMonth());
-	console.log(endDate.getDate());
 	endDateString = moment(endDate).format('YYYY-MM-DD');
 
 	$("#cDate").val(endDateString);
-	console.log($("#cDate").val());
-	console.log(endDate.getMonth());
-	console.log(endDate.getDate());
-	
+
 }
 
 function initialize_dates() {
@@ -459,7 +427,3 @@ function initialize_dates() {
 	//
 	set_end_date_per_start_date('initial');
 }
-
-$(function() {
-	console.log("BK Ready");
-});
