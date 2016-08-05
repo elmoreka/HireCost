@@ -1,3 +1,7 @@
+// Rate Schedule Application built for CPCC
+// Created by: Karl Elmore
+// Email: karl.elmore@cpcc.edu
+
 // This program will calculate the cost of hiring personal for the dates, rate, and hours specified. The program will
 // also retain values for a print friendly page once the calculate/submit button is pressed.  Handlebars is used to
 // update the page with the printable version of the information.
